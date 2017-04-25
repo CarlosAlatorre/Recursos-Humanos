@@ -53,8 +53,26 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="AgregarPuesto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AgregarPuesto.Designer.cs">
+      <DependentUpon>AgregarPuesto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ListaPuestos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ListaPuestos.Designer.cs">
+      <DependentUpon>ListaPuestos.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="AgregarPuesto.resx">
+      <DependentUpon>AgregarPuesto.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ListaPuestos.resx">
+      <DependentUpon>ListaPuestos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
