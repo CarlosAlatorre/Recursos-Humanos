@@ -68,10 +68,10 @@ namespace recursosHumanos.ASISTENCIA
             //fechaa = Convert.ToInt32(FECHAA);
 
             //Obtener el id mas alto de los puestos
-            string sql = "SELECT MAX(ASISTENCIA_ID) FROM ASISTENCIA";
+            /*string sql = "SELECT MAX(ASISTENCIA_ID) FROM ASISTENCIA";
             SqlCommand cmd21 = new SqlCommand(sql, conexion);
 
-            idAsistenciaMaxima = Convert.ToInt32(cmd21.ExecuteScalar()) + 1;
+            idAsistenciaMaxima = Convert.ToInt32(cmd21.ExecuteScalar()) + 1;*/
 
             //Obtener el ID del empleado
             string sql2 = "SELECT EMPLEADO_ID FROM EMPLEADO WHERE NOMBRE=" + "'" + combo_empleado.Text + "'";
@@ -80,9 +80,8 @@ namespace recursosHumanos.ASISTENCIA
             int idEmpleado = Convert.ToInt32(cmd212.ExecuteScalar());
 
 
-            string insertar = "INSERT INTO ASISTENCIA(ASISTENCIA_ID, EMPLEADO_ID, FECHA, HORA_ENTRADA) VALUES (@ASISTENCIA_ID, @EMPLEADO_ID, @FECHA, @HORA_ENTRADA)";
+            string insertar = "INSERT INTO ASISTENCIA(EMPLEADO_ID, FECHA, HORA_ENTRADA) VALUES (@EMPLEADO_ID, @FECHA, @HORA_ENTRADA)";
             SqlCommand cmd = new SqlCommand(insertar, conexion);
-            cmd.Parameters.AddWithValue("@ASISTENCIA_ID", idAsistenciaMaxima);
             cmd.Parameters.AddWithValue("@EMPLEADO_ID", idEmpleado);
             cmd.Parameters.AddWithValue("@FECHA", dateFecha.Text);
             cmd.Parameters.AddWithValue("@HORA_ENTRADA", dateHora.Text);

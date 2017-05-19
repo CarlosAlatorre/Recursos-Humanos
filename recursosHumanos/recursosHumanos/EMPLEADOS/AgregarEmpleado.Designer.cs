@@ -42,6 +42,14 @@
             this.btn_agregar = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.textBox_sexo = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.textBox_email = new System.Windows.Forms.TextBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.textBox_nss = new System.Windows.Forms.TextBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.textBox_civil = new System.Windows.Forms.TextBox();
+            this.label10 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -69,7 +77,7 @@
             // txt_rfc
             // 
             this.txt_rfc.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_rfc.Location = new System.Drawing.Point(74, 189);
+            this.txt_rfc.Location = new System.Drawing.Point(74, 183);
             this.txt_rfc.Name = "txt_rfc";
             this.txt_rfc.Size = new System.Drawing.Size(199, 22);
             this.txt_rfc.TabIndex = 3;
@@ -80,7 +88,7 @@
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.Black;
-            this.label2.Location = new System.Drawing.Point(57, 163);
+            this.label2.Location = new System.Drawing.Point(57, 157);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(38, 16);
             this.label2.TabIndex = 2;
@@ -89,7 +97,7 @@
             // txt_telefono
             // 
             this.txt_telefono.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_telefono.Location = new System.Drawing.Point(74, 265);
+            this.txt_telefono.Location = new System.Drawing.Point(74, 246);
             this.txt_telefono.Name = "txt_telefono";
             this.txt_telefono.Size = new System.Drawing.Size(199, 22);
             this.txt_telefono.TabIndex = 5;
@@ -99,7 +107,7 @@
             this.label3.AutoSize = true;
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(57, 239);
+            this.label3.Location = new System.Drawing.Point(57, 220);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(70, 16);
             this.label3.TabIndex = 4;
@@ -108,7 +116,7 @@
             // txt_domicilio
             // 
             this.txt_domicilio.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_domicilio.Location = new System.Drawing.Point(348, 189);
+            this.txt_domicilio.Location = new System.Drawing.Point(348, 183);
             this.txt_domicilio.Name = "txt_domicilio";
             this.txt_domicilio.Size = new System.Drawing.Size(199, 22);
             this.txt_domicilio.TabIndex = 7;
@@ -118,7 +126,7 @@
             this.label4.AutoSize = true;
             this.label4.BackColor = System.Drawing.Color.Transparent;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(331, 163);
+            this.label4.Location = new System.Drawing.Point(331, 157);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(73, 16);
             this.label4.TabIndex = 6;
@@ -147,7 +155,7 @@
             // btn_cancelar
             // 
             this.btn_cancelar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_cancelar.Location = new System.Drawing.Point(478, 270);
+            this.btn_cancelar.Location = new System.Drawing.Point(492, 427);
             this.btn_cancelar.Name = "btn_cancelar";
             this.btn_cancelar.Size = new System.Drawing.Size(108, 37);
             this.btn_cancelar.TabIndex = 10;
@@ -158,7 +166,7 @@
             // btn_agregar
             // 
             this.btn_agregar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_agregar.Location = new System.Drawing.Point(348, 270);
+            this.btn_agregar.Location = new System.Drawing.Point(362, 427);
             this.btn_agregar.Name = "btn_agregar";
             this.btn_agregar.Size = new System.Drawing.Size(108, 37);
             this.btn_agregar.TabIndex = 11;
@@ -188,13 +196,97 @@
             this.pictureBox1.TabStop = false;
             this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
+            // textBox_sexo
+            // 
+            this.textBox_sexo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox_sexo.Location = new System.Drawing.Point(74, 313);
+            this.textBox_sexo.Name = "textBox_sexo";
+            this.textBox_sexo.Size = new System.Drawing.Size(199, 22);
+            this.textBox_sexo.TabIndex = 15;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.BackColor = System.Drawing.Color.Transparent;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(57, 287);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(43, 16);
+            this.label7.TabIndex = 14;
+            this.label7.Text = "Sexo";
+            // 
+            // textBox_email
+            // 
+            this.textBox_email.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox_email.Location = new System.Drawing.Point(348, 246);
+            this.textBox_email.Name = "textBox_email";
+            this.textBox_email.Size = new System.Drawing.Size(199, 22);
+            this.textBox_email.TabIndex = 17;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.BackColor = System.Drawing.Color.Transparent;
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(331, 220);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(137, 16);
+            this.label8.TabIndex = 16;
+            this.label8.Text = "Correo Electronico";
+            // 
+            // textBox_nss
+            // 
+            this.textBox_nss.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox_nss.Location = new System.Drawing.Point(348, 322);
+            this.textBox_nss.Name = "textBox_nss";
+            this.textBox_nss.Size = new System.Drawing.Size(199, 22);
+            this.textBox_nss.TabIndex = 19;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.BackColor = System.Drawing.Color.Transparent;
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Location = new System.Drawing.Point(331, 296);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(164, 16);
+            this.label9.TabIndex = 18;
+            this.label9.Text = "Numero Seguro Social";
+            // 
+            // textBox_civil
+            // 
+            this.textBox_civil.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox_civil.Location = new System.Drawing.Point(74, 378);
+            this.textBox_civil.Name = "textBox_civil";
+            this.textBox_civil.Size = new System.Drawing.Size(199, 22);
+            this.textBox_civil.TabIndex = 21;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.BackColor = System.Drawing.Color.Transparent;
+            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.Location = new System.Drawing.Point(57, 350);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(91, 16);
+            this.label10.TabIndex = 20;
+            this.label10.Text = "Estado Civil";
+            // 
             // AgregarEmpleado
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(619, 331);
+            this.ClientSize = new System.Drawing.Size(619, 476);
+            this.Controls.Add(this.textBox_civil);
+            this.Controls.Add(this.label10);
+            this.Controls.Add(this.textBox_nss);
+            this.Controls.Add(this.label9);
+            this.Controls.Add(this.textBox_email);
+            this.Controls.Add(this.label8);
+            this.Controls.Add(this.textBox_sexo);
+            this.Controls.Add(this.label7);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.btn_agregar);
@@ -235,5 +327,13 @@
         private System.Windows.Forms.Button btn_agregar;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.TextBox textBox_sexo;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.TextBox textBox_email;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.TextBox textBox_nss;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.TextBox textBox_civil;
+        private System.Windows.Forms.Label label10;
     }
 }

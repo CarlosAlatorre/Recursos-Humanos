@@ -157,6 +157,15 @@ namespace recursosHumanos.PUESTOS
 
         }
 
+        private void btn_cancelar_Click(object sender, EventArgs e)
+        {
+        
+            listaPuestos form = new listaPuestos(bd);
+            form.Show();
+
+            this.Close();
+        }
+
         private void MODIFICAR_PUESTO( int id )
         {
 

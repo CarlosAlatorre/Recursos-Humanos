@@ -9,14 +9,13 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
 
-namespace recursosHumanos.PUESTOS
+namespace recursosHumanos.NOMINA
 {
-    public partial class listaPuestos : Form
+    public partial class GASTOS : Form
     {
-        public listaPuestos(string bd)
+        public GASTOS(string bd)
         {
             InitializeComponent();
-
             this.bd = bd;
         }
 
@@ -24,34 +23,9 @@ namespace recursosHumanos.PUESTOS
         //Variables Publicas
         string bd;
 
-
-        private void listaPuestos_Load(object sender, EventArgs e)
-        {
-            SqlDataAdapter adaptador = new SqlDataAdapter("SELECT PUESTO_ID, TIPO_PUESTO, SUELDO_BASE FROM PUESTO", bd);
-            //OleDbDataAdapter adaptador = new OleDbDataAdapter("SELECT id_platillo,nombre_platillo,precio_platillo FROM MENU", ds);
-
-            DataSet dataset = new DataSet();
-            DataTable tabla = new DataTable();
-
-            adaptador.Fill(dataset);
-            tabla = dataset.Tables[0];
-            this.listView_puestos.Items.Clear();
-            for (int i = 0; i < tabla.Rows.Count; i++)
-            {
-                DataRow filas = tabla.Rows[i];
-                ListViewItem elemntos = new ListViewItem(filas["PUESTO_ID"].ToString());
-                elemntos.SubItems.Add(filas["TIPO_PUESTO"].ToString());
-                elemntos.SubItems.Add(filas["SUELDO_BASE"].ToString());
-
-                listView_puestos.Items.Add(elemntos);
-
-            }
-
-        }
-
         private void btn_agregar_Click(object sender, EventArgs e)
         {
-            AgregarPuesto form = new AgregarPuesto(bd, -1);
+            AGREGAR_GASTO form = new AGREGAR_GASTO(bd, -1);
             form.Show();
 
             this.Close();
@@ -64,10 +38,33 @@ namespace recursosHumanos.PUESTOS
                 int id = Convert.ToInt32(lista.Text);
 
                 this.Hide();
-                AgregarPuesto form = new AgregarPuesto(bd, id);
+                AGREGAR_GASTO form = new AGREGAR_GASTO(bd, id);
                 form.Show();
 
                 this.Close();
+            }
+        }
+
+        private void GASTOS_Load(object sender, EventArgs e)
+        {
+            SqlDataAdapter adaptador = new SqlDataAdapter("SELECT GASTO_ID, NOMBRE, IMPUESTO FROM GASTOS", bd);
+            //OleDbDataAdapter adaptador = new OleDbDataAdapter("SELECT id_platillo,nombre_platillo,precio_platillo FROM MENU", ds);
+
+            DataSet dataset = new DataSet();
+            DataTable tabla = new DataTable();
+
+            adaptador.Fill(dataset);
+            tabla = dataset.Tables[0];
+            this.listView_puestos.Items.Clear();
+            for (int i = 0; i < tabla.Rows.Count; i++)
+            {
+                DataRow filas = tabla.Rows[i];
+                ListViewItem elemntos = new ListViewItem(filas["GASTO_ID"].ToString());
+                elemntos.SubItems.Add(filas["NOMBRE"].ToString());
+                elemntos.SubItems.Add(filas["IMPUESTO"].ToString());
+
+                listView_puestos.Items.Add(elemntos);
+
             }
         }
 
@@ -78,7 +75,7 @@ namespace recursosHumanos.PUESTOS
                 int id = Convert.ToInt32(lista.Text);
 
 
-                DialogResult resultado = MessageBox.Show("Esta seguro de borrar el puesto?", "ADVERTENCIA", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                DialogResult resultado = MessageBox.Show("Esta seguro de borrar el gasto?", "ADVERTENCIA", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
                 if (resultado == DialogResult.Yes)
                 {
                     try
@@ -86,7 +83,7 @@ namespace recursosHumanos.PUESTOS
                         SqlConnection conexion = new SqlConnection(bd);
 
                         conexion.Open();
-                        string insertar = "DELETE FROM PUESTO WHERE PUESTO_ID = " + id;
+                        string insertar = "DELETE FROM GASTOS WHERE GASTO_ID = " + id;
                         SqlCommand cmd = new SqlCommand(insertar, conexion);
 
                         cmd.ExecuteNonQuery();
@@ -113,21 +110,6 @@ namespace recursosHumanos.PUESTOS
         private void btn_salir_Click(object sender, EventArgs e)
         {
             this.Close();
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void listView_puestos_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pictureBox1_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }

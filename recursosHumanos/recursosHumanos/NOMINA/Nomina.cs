@@ -23,7 +23,8 @@ namespace recursosHumanos.NOMINA
         //Variables Publicas
         string bd;
         string fecha1, fecha2, dias1, dias2;
-        int asistencias, sueldoBase, sueldoTotal;
+        int asistencias, sueldoBase;
+        double sueldoTotal;
 
         private void Nomina_Load(object sender, EventArgs e)
         {
@@ -139,6 +140,7 @@ namespace recursosHumanos.NOMINA
             SqlDataAdapter adaptador = new SqlDataAdapter("SELECT NOMBRE,  PUESTO_ID, EMPLEADO_ID FROM EMPLEADO", bd);
             //OleDbDataAdapter adaptador = new OleDbDataAdapter("SELECT id_platillo,nombre_platillo,precio_platillo FROM MENU", ds);
 
+
             DataSet dataset = new DataSet();
             DataTable tabla = new DataTable();
 
@@ -152,6 +154,17 @@ namespace recursosHumanos.NOMINA
                 //OBTENER EL SUELDO BASE POR EL ID DEL PUESTO
                 SqlConnection conexion = new SqlConnection(bd);
                 conexion.Open();
+
+
+                //Obtener gastos
+
+
+               // Obtener SUMA de gastos
+                 string sql = "SELECT COUNT(GASTO_ID) FROM GASTOS";
+                 SqlCommand cmd21 = new SqlCommand(sql, conexion);
+
+                 var sumaGastos = Convert.ToInt32(cmd21.ExecuteScalar());
+
 
                 string sql3 = "SELECT SUELDO_BASE FROM PUESTO WHERE PUESTO_ID=" + filas["PUESTO_ID"];
                 SqlCommand cmd3 = new SqlCommand(sql3, conexion);
@@ -167,6 +180,22 @@ namespace recursosHumanos.NOMINA
 
 
                 sueldoTotal = asistencias * sueldoBase;
+
+
+                //Reducir sueldototal con impuestos
+                for(int ii = 0; ii < sumaGastos ; ii++)
+                {
+                
+                    string sal33 = "SELECT IMPUESTO FROM GASTOS WHERE GASTO_ID=" + ii;
+                    SqlCommand coman22d = new SqlCommand(sal33, conexion);
+
+                    double gasto = Convert.ToDouble((coman22d.ExecuteScalar()).ToString());
+
+                    gasto = (gasto / 100);
+                    sueldoTotal = sueldoTotal - (sueldoTotal * gasto);
+
+                }
+
 
                 //Select id de la nomina
 

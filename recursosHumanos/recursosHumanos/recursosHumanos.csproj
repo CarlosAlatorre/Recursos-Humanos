@@ -70,6 +70,18 @@
     <Compile Include="EMPLEADOS\Empleados.Designer.cs">
       <DependentUpon>Empleados.cs</DependentUpon>
     </Compile>
+    <Compile Include="NOMINA\AGREGAR_GASTO.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NOMINA\AGREGAR_GASTO.Designer.cs">
+      <DependentUpon>AGREGAR_GASTO.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NOMINA\GASTOS.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NOMINA\GASTOS.Designer.cs">
+      <DependentUpon>GASTOS.cs</DependentUpon>
+    </Compile>
     <Compile Include="NOMINA\Nomina.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -107,6 +119,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="EMPLEADOS\Empleados.resx">
       <DependentUpon>Empleados.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NOMINA\AGREGAR_GASTO.resx">
+      <DependentUpon>AGREGAR_GASTO.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NOMINA\GASTOS.resx">
+      <DependentUpon>GASTOS.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="NOMINA\Nomina.resx">
       <DependentUpon>Nomina.cs</DependentUpon>

@@ -161,8 +161,12 @@ namespace recursosHumanos.EMPLEADOS
            // idPuestoMaximo = Convert.ToInt32(cmd21.ExecuteScalar()) + 1;
 
 
-            string insertar = "INSERT INTO EMPLEADO(PUESTO_ID, NOMBRE, RFC, DIRECCION, TELEFONO) VALUES ( @PUESTO_ID, @NOMBRE, @RFC, @DIRECCION, @TELEFONO)";
+            string insertar = "INSERT INTO EMPLEADO(SEXO, EMAIL, ESTADOCIVIL, NSS, PUESTO_ID, NOMBRE, RFC, DIRECCION, TELEFONO) VALUES (@SEXO, @EMAIL, @ESTADOCIVIL, @NSS,  @PUESTO_ID, @NOMBRE, @RFC, @DIRECCION, @TELEFONO)";
             SqlCommand cmd = new SqlCommand(insertar, conexion);
+            cmd.Parameters.AddWithValue("@SEXO", textBox_sexo);
+            cmd.Parameters.AddWithValue("@EMAIL", textBox_email);
+            cmd.Parameters.AddWithValue("@ESTADOCIVIL", textBox_civil);
+            cmd.Parameters.AddWithValue("@NSS", textBox_nss);
             cmd.Parameters.AddWithValue("@PUESTO_ID", idPuesto);
             cmd.Parameters.AddWithValue("@NOMBRE", txt_nombre.Text);
             cmd.Parameters.AddWithValue("@RFC", txt_rfc.Text);

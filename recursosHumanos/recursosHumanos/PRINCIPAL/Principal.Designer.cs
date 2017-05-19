@@ -46,6 +46,7 @@
             this.date_mes = new System.Windows.Forms.DateTimePicker();
             this.date_año = new System.Windows.Forms.DateTimePicker();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.gastosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -108,7 +109,8 @@
             this.puestosToolStripMenuItem,
             this.empleadosToolStripMenuItem,
             this.asistenciaToolStripMenuItem,
-            this.nominaToolStripMenuItem});
+            this.nominaToolStripMenuItem,
+            this.gastosToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(620, 24);
@@ -197,6 +199,13 @@
             this.pictureBox1.TabIndex = 17;
             this.pictureBox1.TabStop = false;
             // 
+            // gastosToolStripMenuItem
+            // 
+            this.gastosToolStripMenuItem.Name = "gastosToolStripMenuItem";
+            this.gastosToolStripMenuItem.Size = new System.Drawing.Size(54, 20);
+            this.gastosToolStripMenuItem.Text = "Gastos";
+            this.gastosToolStripMenuItem.Click += new System.EventHandler(this.gastosToolStripMenuItem_Click);
+            // 
             // Principal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -244,5 +253,6 @@
         private System.Windows.Forms.DateTimePicker date_mes;
         private System.Windows.Forms.DateTimePicker date_año;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.ToolStripMenuItem gastosToolStripMenuItem;
     }
 }

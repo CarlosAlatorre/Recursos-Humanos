@@ -113,5 +113,11 @@ namespace recursosHumanos.PRINCIPAL
             Empleados form = new Empleados(bd);
             form.Show();
         }
+
+        private void gastosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            GASTOS form = new GASTOS(bd);
+            form.Show();
+        }
     }
 }
