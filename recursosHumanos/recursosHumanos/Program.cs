@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace recursosHumanos
+namespace recursosHumanos.PRINCIPAL
 {
     static class Program
     {
@@ -14,9 +14,11 @@ namespace recursosHumanos
         [STAThread]
         static void Main()
         {
+            string bd = "Data Source= LOCALHOST; Initial Catalog=BD_DONJUAN; integrated security = true";
+
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+            Application.Run(new Principal(bd));
         }
     }
 }
