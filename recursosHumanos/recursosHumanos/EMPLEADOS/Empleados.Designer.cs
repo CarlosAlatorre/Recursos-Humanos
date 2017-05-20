@@ -137,7 +137,7 @@
             this.btn_eliminar.Name = "btn_eliminar";
             this.btn_eliminar.Size = new System.Drawing.Size(93, 49);
             this.btn_eliminar.TabIndex = 3;
-            this.btn_eliminar.Text = "Eliminar";
+            this.btn_eliminar.Text = "Despedir";
             this.btn_eliminar.UseVisualStyleBackColor = true;
             this.btn_eliminar.Click += new System.EventHandler(this.btn_eliminar_Click);
             // 

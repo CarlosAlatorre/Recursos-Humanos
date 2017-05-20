@@ -207,7 +207,7 @@ namespace recursosHumanos.NOMINA
                 string insertar = "INSERT INTO NOMINA(EMPLEADO_ID, SUELDO_TOTAL, BONO) VALUES (@EMPLEADO_ID, @SUELDO_TOTAL, @BONO)";
                 SqlCommand cmd = new SqlCommand(insertar, conexion);
               
-                cmd.Parameters.AddWithValue("@EMPLEADO_ID", filas["PUESTO_ID"]);
+                cmd.Parameters.AddWithValue("@EMPLEADO_ID", filas["EMPLEADO_ID"]);
                 cmd.Parameters.AddWithValue("@SUELDO_TOTAL", sueldoTotal);
                 cmd.Parameters.AddWithValue("@BONO", 0);
 

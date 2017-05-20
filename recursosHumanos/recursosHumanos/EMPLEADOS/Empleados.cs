@@ -43,7 +43,7 @@ namespace recursosHumanos.EMPLEADOS
 
         private void Empleados_Load(object sender, EventArgs e)
         {
-            SqlDataAdapter adaptador = new SqlDataAdapter("SELECT EMPLEADO_ID,NOMBRE ,  PUESTO_ID, RFC, DIRECCION, TELEFONO FROM EMPLEADO", bd);
+            SqlDataAdapter adaptador = new SqlDataAdapter("SELECT EMPLEADO_ID, NOMBRE,  PUESTO_ID, RFC, DIRECCION, TELEFONO, DESEMPLEADO FROM EMPLEADO", bd);
             //OleDbDataAdapter adaptador = new OleDbDataAdapter("SELECT id_platillo,nombre_platillo,precio_platillo FROM MENU", ds);
 
             DataSet dataset = new DataSet();
@@ -55,14 +55,21 @@ namespace recursosHumanos.EMPLEADOS
             for (int i = 0; i < tabla.Rows.Count; i++)
             {
                 DataRow filas = tabla.Rows[i];
-                ListViewItem elemntos = new ListViewItem(filas["EMPLEADO_ID"].ToString());
-                elemntos.SubItems.Add(filas["NOMBRE"].ToString());
-                elemntos.SubItems.Add(filas["PUESTO_ID"].ToString());
-                elemntos.SubItems.Add(filas["RFC"].ToString());
-                elemntos.SubItems.Add(filas["DIRECCION"].ToString());
-                elemntos.SubItems.Add(filas["TELEFONO"].ToString());
-               
-                listView_empleados.Items.Add(elemntos);
+
+                //checar si esta despedido
+                if(Convert.ToInt32(filas["DESEMPLEADO"].ToString()) == 0)
+                {
+                    ListViewItem elemntos = new ListViewItem(filas["EMPLEADO_ID"].ToString());
+                    elemntos.SubItems.Add(filas["NOMBRE"].ToString());
+                    elemntos.SubItems.Add(filas["PUESTO_ID"].ToString());
+                    elemntos.SubItems.Add(filas["RFC"].ToString());
+                    elemntos.SubItems.Add(filas["DIRECCION"].ToString());
+                    elemntos.SubItems.Add(filas["TELEFONO"].ToString());
+
+                    listView_empleados.Items.Add(elemntos);
+                }
+
+             
 
             }
         }
@@ -88,7 +95,7 @@ namespace recursosHumanos.EMPLEADOS
                 int id = Convert.ToInt32(lista.Text);
 
 
-                DialogResult resultado = MessageBox.Show("Esta seguro de borrar el empleado?", "ADVERTENCIA", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                DialogResult resultado = MessageBox.Show("Esta seguro de despedir a este empleado?", "ADVERTENCIA", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
                 if (resultado == DialogResult.Yes)
                 {
                     try
@@ -96,8 +103,13 @@ namespace recursosHumanos.EMPLEADOS
                         SqlConnection conexion = new SqlConnection(bd);
 
                         conexion.Open();
-                        string insertar = "DELETE FROM EMPLEADO WHERE EMPLEADO_ID = " + id;
+
+
+                        string insertar = "UPDATE EMPLEADO SET DESEMPLEADO= @DESEMPLEADO WHERE EMPLEADO_ID=" + id;
                         SqlCommand cmd = new SqlCommand(insertar, conexion);
+                        cmd.Parameters.AddWithValue("@DESEMPLEADO", 1);
+
+                        cmd.ExecuteNonQuery();
 
                         cmd.ExecuteNonQuery();
                         conexion.Close();
